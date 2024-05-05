@@ -7,6 +7,7 @@ import { NavbarComponent } from './core/components/navbar/navbar.component';
 import { DoctorListComponent } from './features/doctor/doctor-list/doctor-list.component';
 import { PatientListComponent } from './features/patient/patient-list/patient-list.component';
 import { AppointmentListComponent } from './features/appointment/appointment-list/appointment-list.component';
+import { AddDoctorComponent } from './features/doctor/add-doctor/add-doctor.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AppointmentListComponent } from './features/appointment/appointment-lis
     NavbarComponent,
     DoctorListComponent,
     PatientListComponent,
-    AppointmentListComponent
+    AppointmentListComponent,
+    AddDoctorComponent
   ],
   imports: [
     BrowserModule,
