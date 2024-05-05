@@ -9,6 +9,9 @@ import { PatientListComponent } from './features/patient/patient-list/patient-li
 import { AppointmentListComponent } from './features/appointment/appointment-list/appointment-list.component';
 import { AddDoctorComponent } from './features/doctor/add-doctor/add-doctor.component';
 import { SpecializationListComponent } from './features/specialization/specialization-list/specialization-list.component';
+import { AddSpecializationComponent } from './features/specialization/add-specialization/add-specialization.component';
+import { AddPatientComponent } from './features/patient/add-patient/add-patient.component';
+import { AddAppointmentComponent } from './features/appointment/add-appointment/add-appointment.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { SpecializationListComponent } from './features/specialization/specializ
     PatientListComponent,
     AppointmentListComponent,
     AddDoctorComponent,
-    SpecializationListComponent
+    SpecializationListComponent,
+    AddSpecializationComponent,
+    AddPatientComponent,
+    AddAppointmentComponent
   ],
   imports: [
     BrowserModule,
