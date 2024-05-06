@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AddPatientRequest } from '../../models/add-patient-request.model';
+import { AddPatientRequest } from '../models/add-patient-request.model';
 
 @Component({
   selector: 'app-add-patient',

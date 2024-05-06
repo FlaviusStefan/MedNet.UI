@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AddAppointmentRequest } from '../../models/add-appointment-request.model';
+import { AddAppointmentRequest } from '../models/add-appointment-request.model';
 
 @Component({
   selector: 'app-add-appointment',
@@ -14,6 +14,7 @@ export class AddAppointmentComponent {
       doctorid: '',
       patientid: '',
       datetime: new Date(0),
+      status: '',
       reason: ''
     };
   }

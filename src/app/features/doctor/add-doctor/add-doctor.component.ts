@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AddDoctorRequest } from '../../models/add-doctor-request.model';
+import { AddDoctorRequest } from '../models/add-doctor-request.model';
 
 @Component({
   selector: 'app-add-doctor',
