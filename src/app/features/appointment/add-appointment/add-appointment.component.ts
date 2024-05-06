@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AddAppointmentRequest } from '../models/add-appointment-request.model';
+import { AppointmentService } from '../services/appointment.service';
 
 @Component({
   selector: 'app-add-appointment',
@@ -9,17 +10,22 @@ import { AddAppointmentRequest } from '../models/add-appointment-request.model';
 export class AddAppointmentComponent {
   model: AddAppointmentRequest;
 
-  constructor(){
+  constructor(private appointmentService: AppointmentService){
     this.model = {
       doctorid: '',
       patientid: '',
-      datetime: new Date(0),
+      appointmentdatetime: new Date(0),
       status: '',
       reason: ''
     };
   }
 
   onFormSubmit(){
-    console.log(this.model);
+    this.appointmentService.addCategory(this.model)
+    .subscribe({
+      next: (response) => {
+        console.log('Succesful');
+      }
+    });
   }
 }
