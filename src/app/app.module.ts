@@ -12,6 +12,7 @@ import { SpecializationListComponent } from './features/specialization/specializ
 import { AddSpecializationComponent } from './features/specialization/add-specialization/add-specialization.component';
 import { AddPatientComponent } from './features/patient/add-patient/add-patient.component';
 import { AddAppointmentComponent } from './features/appointment/add-appointment/add-appointment.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AddAppointmentComponent } from './features/appointment/add-appointment/
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

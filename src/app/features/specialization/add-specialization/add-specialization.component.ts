@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AddSpecializationRequest } from '../../models/add-specialization-request.model';
 
 @Component({
   selector: 'app-add-specialization',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./add-specialization.component.css']
 })
 export class AddSpecializationComponent {
+  model: AddSpecializationRequest;
 
+  constructor(){
+    this.model = {
+      name: ''
+    };
+  }
+
+  onFormSubmit(){
+    console.log(this.model);
+  }
 }
