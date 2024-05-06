@@ -1,1 +1,38 @@
-<p>add-doctor works!</p>
+<div class="container">
+    <h1 class="mt-3">Add Doctor</h1>
+
+    <form #form="ngForm" (ngSubmit)="onFormSubmit()">
+        <div class="mt-2">
+            <div class="mt-3">
+                <label class="form-label">First Name</label>
+                <input type="text" id="doctorFirstName" class="form-control" name="doctorFirstName" [(ngModel)]="model.firstname">
+            </div>
+            <div class="mt-3">
+                <label class="form-label">Last Name</label>
+                <input type="text" id="doctorLastName" class="form-control" name="doctorLastName" [(ngModel)]="model.lastname">
+            </div>
+            <div class="mt-3">
+                <label class="form-label">SpecializationID</label>
+                <input type="text" id="doctorSpecialization" class="form-control" name="doctorSpecialization" [(ngModel)]="model.specialization">
+            </div>
+            <div class="mt-3">
+                <label class="form-label">Date of Birth</label>
+                <input type="date" id="doctorDateOfBirth" class="form-control" name="doctorDateOfBirth" [(ngModel)]="model.dateofbirth">
+            </div>
+            <div class="mt-3">
+                <label class="form-label">Gender</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="male" name="gender" value="male" [(ngModel)]="model.gender">
+                    <label class="form-check-label" for="male">Male</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="female" name="gender" value="female" [(ngModel)]="model.gender">
+                    <label class="form-check-label" for="female">Female</label>
+                </div>
+            </div>
+            <div class="mt-3">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
