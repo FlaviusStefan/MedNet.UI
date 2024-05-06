@@ -12,6 +12,7 @@ import { AddDoctorComponent } from './features/doctor/add-doctor/add-doctor.comp
 import { AddPatientComponent } from './features/patient/add-patient/add-patient.component';
 import { AddAppointmentComponent } from './features/appointment/add-appointment/add-appointment.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
