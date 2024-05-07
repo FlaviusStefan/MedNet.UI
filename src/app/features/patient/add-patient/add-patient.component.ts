@@ -1,14 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { AddPatientRequest } from '../models/add-patient-request.model';
 import { PatientService } from '../services/patient.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-add-patient',
   templateUrl: './add-patient.component.html',
   styleUrls: ['./add-patient.component.css']
 })
-export class AddPatientComponent {
+export class AddPatientComponent implements OnDestroy{
   model: AddPatientRequest;
+  private addPatientSubscription?: Subscription;
 
   constructor(private patientService:PatientService){
     this.model = {
@@ -20,11 +22,15 @@ export class AddPatientComponent {
   }
 
   onFormSubmit(){
-    this.patientService.addPatient(this.model)
+    this.addPatientSubscription = this.patientService.addPatient(this.model)
     .subscribe({
       next: (response) => {
         console.log('Succesful');
       }
     })
+  }
+
+  ngOnDestroy(): void {
+    this.addPatientSubscription?.unsubscribe();
   }
 }
