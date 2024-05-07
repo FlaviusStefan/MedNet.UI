@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AddPatientRequest } from '../models/add-patient-request.model';
+import { PatientService } from '../services/patient.service';
 
 @Component({
   selector: 'app-add-patient',
@@ -9,7 +10,7 @@ import { AddPatientRequest } from '../models/add-patient-request.model';
 export class AddPatientComponent {
   model: AddPatientRequest;
 
-  constructor(){
+  constructor(private patientService:PatientService){
     this.model = {
       firstname: '',
       lastname: '',
@@ -19,6 +20,11 @@ export class AddPatientComponent {
   }
 
   onFormSubmit(){
-    console.log(this.model);
+    this.patientService.addPatient(this.model)
+    .subscribe({
+      next: (response) => {
+        console.log('Succesful');
+      }
+    })
   }
 }
