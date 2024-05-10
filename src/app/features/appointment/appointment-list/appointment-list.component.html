@@ -4,7 +4,32 @@
 
     <div class="d-flex justify-content-end mt-3">
         <a [routerLink]="['/admin/appointments/add']" class="btn btn-primary">Add Appointment</a>
-
     </div>
+
+    <ng-container *ngIf="appointments">
+        <table class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>PatientId</th>
+                    <th>DoctorId</th>
+                    <th>Date&Time</th>
+                    <th>Status</th>
+                    <th>Reason</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let appointment of appointments">
+                    <td>{{appointment.id}}</td>
+                    <td>{{appointment.patientid}}</td>
+                    <td>{{appointment.doctorid}}</td>
+                    <td>{{appointment.appointmentdatetime}}</td>
+                    <td>{{appointment.status}}</td>
+                    <td>{{appointment.reason}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </ng-container>
 
 </div>
