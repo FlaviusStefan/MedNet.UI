@@ -23,7 +23,7 @@ export class AddAppointmentComponent implements OnDestroy {
   }
 
   onFormSubmit(){
-    this.addAppointmentSubscription = this.appointmentService.addCategory(this.model)
+    this.addAppointmentSubscription = this.appointmentService.addAppointment(this.model)
     .subscribe({
       next: (response) => {
         console.log('Succesful');
