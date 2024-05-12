@@ -7,7 +7,7 @@
 
     </div>
 
-    <ng-container *ngIf="patients">
+    <ng-container *ngIf="patients$ | async as patients">
         <table class="table table-bordered mt-3">
             <thead>
                 <tr>

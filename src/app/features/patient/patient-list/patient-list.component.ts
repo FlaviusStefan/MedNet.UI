@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Patient } from '../models/patient.model';
 import { PatientService } from '../services/patient.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-patient-list',
@@ -8,16 +9,11 @@ import { PatientService } from '../services/patient.service';
   styleUrls: ['./patient-list.component.css']
 })
 export class PatientListComponent {
-  patients?: Patient[];
+  patients$?: Observable<Patient[]>;
 
   constructor(private patientService: PatientService) {
   }
   ngOnInit(): void {
-    this.patientService.getAllPatients()
-    .subscribe({
-      next: (response) => {
-        this.patients = response;
-      }
-    });
+    this.patients$ = this.patientService.getAllPatients();
   }
 }
