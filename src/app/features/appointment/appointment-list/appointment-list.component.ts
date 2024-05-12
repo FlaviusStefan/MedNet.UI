@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppointmentService } from '../services/appointment.service';
 import { Appointment } from '../models/appointment.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-appointment-list',
@@ -8,17 +9,12 @@ import { Appointment } from '../models/appointment.model';
   styleUrls: ['./appointment-list.component.css']
 })
 export class AppointmentListComponent implements OnInit{
-  appointments?: Appointment[];
+  appointments$?: Observable<Appointment[]>;
 
   constructor(private appointmentService: AppointmentService) {
   }
   ngOnInit(): void {
-    this.appointmentService.getAllAppointments()
-    .subscribe({
-      next: (response) => {
-        this.appointments = response;
-      }
-    });
+    this.appointments$ = this.appointmentService.getAllAppointments();    
   }
 
   

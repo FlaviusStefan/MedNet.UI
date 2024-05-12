@@ -6,7 +6,7 @@
         <a [routerLink]="['/admin/appointments/add']" class="btn btn-primary">Add Appointment</a>
     </div>
 
-    <ng-container *ngIf="appointments">
+    <ng-container *ngIf="appointments$ | async as appointments">
         <table class="table table-bordered mt-3">
             <thead>
                 <tr>
