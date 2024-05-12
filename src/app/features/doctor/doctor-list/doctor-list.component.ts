@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Doctor } from '../models/doctor.model';
 import { DoctorService } from '../services/doctor.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-doctor-list',
@@ -8,16 +9,11 @@ import { DoctorService } from '../services/doctor.service';
   styleUrls: ['./doctor-list.component.css']
 })
 export class DoctorListComponent {
-  doctors?: Doctor[];
+  doctors$?: Observable<Doctor[]>;
 
   constructor(private doctorService: DoctorService) {
   }
   ngOnInit(): void {
-    this.doctorService.getAllDoctors()
-    .subscribe({
-      next: (response) => {
-        this.doctors = response;
-      }
-    });
+    this.doctors$ =  this.doctorService.getAllDoctors();
   }
 }
