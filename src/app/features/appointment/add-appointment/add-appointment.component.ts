@@ -2,6 +2,8 @@ import { Component, OnDestroy } from '@angular/core';
 import { AddAppointmentRequest } from '../models/add-appointment-request.model';
 import { AppointmentService } from '../services/appointment.service';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-add-appointment',
@@ -12,7 +14,9 @@ export class AddAppointmentComponent implements OnDestroy {
   model: AddAppointmentRequest;
   private addAppointmentSubscription?: Subscription;
 
-  constructor(private appointmentService: AppointmentService){
+  constructor(private appointmentService: AppointmentService,
+    private router: Router
+  ){
     this.model = {
       doctorid: '',
       patientid: '',
@@ -26,8 +30,8 @@ export class AddAppointmentComponent implements OnDestroy {
     this.addAppointmentSubscription = this.appointmentService.addAppointment(this.model)
     .subscribe({
       next: (response) => {
-        console.log('Succesful');
-      }
+        this.router.navigateByUrl('/admin/appointments');
+      }    
     });
   }
 

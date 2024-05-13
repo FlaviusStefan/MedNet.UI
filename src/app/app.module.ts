@@ -13,6 +13,9 @@ import { AddPatientComponent } from './features/patient/add-patient/add-patient.
 import { AddAppointmentComponent } from './features/appointment/add-appointment/add-appointment.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EditAppointmentComponent } from './features/appointment/edit-appointment/edit-appointment.component';
 
 @NgModule({
   declarations: [
@@ -23,13 +26,16 @@ import { HttpClientModule } from '@angular/common/http';
     AppointmentListComponent,
     AddDoctorComponent,
     AddPatientComponent,
-    AddAppointmentComponent
+    AddAppointmentComponent,
+    EditAppointmentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

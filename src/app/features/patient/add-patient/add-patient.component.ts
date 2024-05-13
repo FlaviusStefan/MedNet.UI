@@ -2,6 +2,7 @@ import { Component, OnDestroy } from '@angular/core';
 import { AddPatientRequest } from '../models/add-patient-request.model';
 import { PatientService } from '../services/patient.service';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-patient',
@@ -12,7 +13,9 @@ export class AddPatientComponent implements OnDestroy{
   model: AddPatientRequest;
   private addPatientSubscription?: Subscription;
 
-  constructor(private patientService:PatientService){
+  constructor(private patientService:PatientService,
+    private router: Router
+  ){
     this.model = {
       firstname: '',
       lastname: '',
@@ -25,7 +28,8 @@ export class AddPatientComponent implements OnDestroy{
     this.addPatientSubscription = this.patientService.addPatient(this.model)
     .subscribe({
       next: (response) => {
-        console.log('Succesful');
+        this.router.navigateByUrl('/admin/patients');
+
       }
     })
   }
