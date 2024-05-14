@@ -1,3 +1,75 @@
-<h1>
-    {{id}}
-</h1>
+<div class="container">
+
+    <h1 class="mt-3">Edit Appointment</h1>
+
+    <ng-container *ngIf="appointment;else notFound">
+    <form #form="ngForm" (ngSubmit)="onFormSubmit()">
+        <div class="mt-2">
+            <div class="mt-3">
+                <label for="appointmentId">Appointment Id</label>
+                <input type="text" disabled
+                id="appointmentId"
+                class="form-control"
+                name="appointmentId"
+                value="{{appointment.id}}">
+            </div>
+
+            <div class="mt-3">
+                <label for="doctorId">Doctor Id</label>
+                <input type="text" disabled
+                id="doctorId"
+                class="form-control"
+                name="doctorId"
+                value="{{appointment.doctorId}}">
+            </div>
+
+            <div class="mt-3">
+                <label for="patientId">Patient Id</label>
+                <input type="text" disabled
+                id="patientId"
+                class="form-control"
+                name="patientId"
+                value="{{appointment.patientId}}">
+            </div>
+            <div class="mt-3">
+                <label for="appointmentDateTime">Date & Time</label>
+                <input type="datetime-local" 
+                id="appointmentDateTime"
+                class="form-control"
+                name="appointmentDateTime"
+                [(ngModel)]="appointment.appointmentDateTime">
+            </div>
+            <div class="mt-3">
+                <label class="form-label">Status</label>
+                <select class="form-select" id="appointmentStatus" name="appointmentStatus" [(ngModel)]="appointment.status">
+                    <option value="Scheduled">Scheduled</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Cancelled">Cancelled</option>
+                    <option value="Completed">Completed</option>
+                 </select>
+            </div>
+            <div class="mt-3">
+                <label class="form-label">Reason</label>
+                <select class="form-select" id="appointmentReason" name="appointmentReason" [(ngModel)]="appointment.reason">
+                    <option value="Consultation">Consultation</option>
+                    <option value="FollowUp">FollowUp</option>
+                    <option value="Surgery">Surgery</option>
+                    <option value="Emergency">Emergency</option>
+                 </select>
+            </div>
+            <div class="mt-3">
+                <button type="submit" class="btn btn-primary">Submit Changes</button>
+            </div>
+        </div>
+    </form>
+
+    </ng-container>
+
+
+    <ng-template #notFound>
+        <div class="alert alert-danger" role="alert">
+            Appointment not found!
+        </div>
+    </ng-template>
+
+</div>
