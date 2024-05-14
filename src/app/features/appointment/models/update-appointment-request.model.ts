@@ -1,7 +1,7 @@
-export interface AddAppointmentRequest{
+export interface UpdateAppointmentRequest {
     doctorId: string;
     patientId: string;
-    appointmentDateTime: Date;
+    appointmentDateTime: string;
     status: string;
     reason: string;
 }

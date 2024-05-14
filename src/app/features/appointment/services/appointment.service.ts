@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Appointment } from '../models/appointment.model';
 import { environment } from 'src/environments/environment.development';
+import { UpdateAppointmentRequest } from '../models/update-appointment-request.model';
 
 @Injectable({
   providedIn: 'root'
@@ -22,5 +23,9 @@ export class AppointmentService {
 
   getAppointmentById(id: string): Observable<Appointment> {
     return this.http.get<Appointment>(`${environment.apiBaseUrl}/api/appointments/${id}`);
+  }
+
+  updateAppointment(id: string, updateAppointmentRequest: UpdateAppointmentRequest): Observable<Appointment> {
+    return this.http.put<Appointment>(`${environment.apiBaseUrl}/api/appointments/${id}`, updateAppointmentRequest);
   }
 }

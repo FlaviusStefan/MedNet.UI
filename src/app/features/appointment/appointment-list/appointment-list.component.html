@@ -11,8 +11,8 @@
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Patient ID</th>
                     <th>Doctor ID</th>
+                    <th>Patient ID</th>
                     <th>Date&Time</th>
                     <th>Status</th>
                     <th>Reason</th>
@@ -22,8 +22,8 @@
             <tbody>
                 <tr *ngFor="let appointment of appointments">
                     <td>{{appointment.id}}</td>
-                    <td>{{appointment.patientId}}</td>
                     <td>{{appointment.doctorId}}</td>
+                    <td>{{appointment.patientId}}</td>
                     <td>{{appointment.appointmentDateTime}}</td>
                     <td>{{appointment.status}}</td>
                     <td>{{appointment.reason}}</td>

@@ -18,9 +18,9 @@ export class AddAppointmentComponent implements OnDestroy {
     private router: Router
   ){
     this.model = {
-      doctorid: '',
-      patientid: '',
-      appointmentdatetime: new Date(0),
+      doctorId: '',
+      patientId: '',
+      appointmentDateTime: new Date(0),
       status: '',
       reason: ''
     };

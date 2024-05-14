@@ -1,8 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AppointmentService } from '../services/appointment.service';
 import { Appointment } from '../models/appointment.model';
+import { UpdateAppointmentRequest } from '../models/update-appointment-request.model';
 
 @Component({
   selector: 'app-edit-appointment',
@@ -13,10 +14,12 @@ export class EditAppointmentComponent implements OnInit, OnDestroy {
 
   id: string | null = null;
   paramsSubscription?: Subscription;
+  editAppointmentSubscription?: Subscription;
   appointment?: Appointment;
 
   constructor(private route: ActivatedRoute,
-    private appointmentService: AppointmentService
+    private appointmentService: AppointmentService,
+    private router: Router
   ) {
 
   }
@@ -41,11 +44,28 @@ export class EditAppointmentComponent implements OnInit, OnDestroy {
   }
 
   onFormSubmit(): void {
-     console.log(this.appointment);
+    const updateAppointmentRequest: UpdateAppointmentRequest = {
+      doctorId: this.appointment?.doctorId ?? '',
+      patientId: this.appointment?.patientId ?? '',
+      appointmentDateTime: this.appointment?.appointmentDateTime ?? '',
+      status: this.appointment?.status ?? '',
+      reason: this.appointment?.reason ?? ''
+    };
+
+
+    if(this.id){
+      this.editAppointmentSubscription = this.appointmentService.updateAppointment(this.id, updateAppointmentRequest)
+      .subscribe({
+        next: (response) => {
+          this.router.navigateByUrl('/admin/appointments');
+        }
+      });
+    }
   }
 
   ngOnDestroy(): void {
     this.paramsSubscription?.unsubscribe();
+    this.editAppointmentSubscription?.unsubscribe();
   }
 
 

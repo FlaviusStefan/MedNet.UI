@@ -41,7 +41,7 @@
             </div>
             <div class="mt-3">
                 <label class="form-label">Status</label>
-                <select class="form-select" id="appointmentStatus" name="appointmentStatus" [(ngModel)]="appointment.status">
+                <select class="form-select" id="status" name="status" [(ngModel)]="appointment.status">
                     <option value="Scheduled">Scheduled</option>
                     <option value="In Progress">In Progress</option>
                     <option value="Cancelled">Cancelled</option>
@@ -50,7 +50,7 @@
             </div>
             <div class="mt-3">
                 <label class="form-label">Reason</label>
-                <select class="form-select" id="appointmentReason" name="appointmentReason" [(ngModel)]="appointment.reason">
+                <select class="form-select" id="reason" name="reason" [(ngModel)]="appointment.reason">
                     <option value="Consultation">Consultation</option>
                     <option value="FollowUp">FollowUp</option>
                     <option value="Surgery">Surgery</option>
