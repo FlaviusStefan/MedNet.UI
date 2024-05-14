@@ -16,7 +16,7 @@
                     <th>Date&Time</th>
                     <th>Status</th>
                     <th>Reason</th>
-
+                    <th>Edit</th>
                 </tr>
             </thead>
             <tbody>
@@ -27,6 +27,10 @@
                     <td>{{appointment.appointmentDateTime}}</td>
                     <td>{{appointment.status}}</td>
                     <td>{{appointment.reason}}</td>
+                    <td>
+                        <a [routerLink]="['/admin/appointments', appointment.id]" class="btn btn-light">
+                        Edit</a>
+                    </td>
                 </tr>
             </tbody>
         </table>

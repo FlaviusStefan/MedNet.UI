@@ -6,6 +6,7 @@ import { AppointmentListComponent } from './features/appointment/appointment-lis
 import { AddDoctorComponent } from './features/doctor/add-doctor/add-doctor.component';
 import { AddPatientComponent } from './features/patient/add-patient/add-patient.component';
 import { AddAppointmentComponent } from './features/appointment/add-appointment/add-appointment.component';
+import { EditAppointmentComponent } from './features/appointment/edit-appointment/edit-appointment.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'admin/appointments/add',
     component: AddAppointmentComponent
+  },
+  {
+    path: 'admin/appointments/:id',
+    component: EditAppointmentComponent
   }
 
 ];
