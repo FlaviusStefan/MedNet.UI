@@ -17,9 +17,9 @@ export class AddPatientComponent implements OnDestroy{
     private router: Router
   ){
     this.model = {
-      firstname: '',
-      lastname: '',
-      dateofbirth: new Date(0),
+      firstName: '',
+      lastName: '',
+      dateOfBirth: new Date(0),
       gender: ''
     }
   }

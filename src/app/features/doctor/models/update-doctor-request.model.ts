@@ -1,7 +1,7 @@
-export interface Patient {
-    id: string;
+export interface UpdateDoctorRequest{
     firstName: string;
     lastName: string;
     dateOfBirth: string;
+    specialization: string;
     gender: string;
 }

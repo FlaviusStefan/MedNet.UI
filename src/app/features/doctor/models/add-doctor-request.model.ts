@@ -1,7 +1,7 @@
 export interface AddDoctorRequest{
-    firstname: string;
-    lastname: string;
+    firstName: string;
+    lastName: string;
+    dateOfBirth: Date;
     specialization: string;
-    dateofbirth: Date;
     gender: string;
 }

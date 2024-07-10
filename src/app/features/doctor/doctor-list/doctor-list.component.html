@@ -17,17 +17,23 @@
                     <th>Specialization</th>
                     <th>Date of birth</th>
                     <th>Gender</th>
-
+                    <th>Edit</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let doctor of doctors">
+                <tr *ngFor="let doctor of doctors"  >
                     <td>{{doctor.id}}</td>
                     <td>{{doctor.firstName}}</td>
                     <td>{{doctor.lastName}}</td>
                     <td>{{doctor.specialization}}</td>
                     <td>{{doctor.dateOfBirth}}</td>
                     <td>{{doctor.gender}}</td>
+                    <td>
+                        <a [routerLink]="['/admin/doctors', doctor.id]" class="btn btn-light">
+                            Edit
+                        </a>
+                    </td>
+                    
                 </tr>
             </tbody>
         </table>

@@ -16,6 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EditAppointmentComponent } from './features/appointment/edit-appointment/edit-appointment.component';
+import { EditDoctorComponent } from './features/doctor/edit-doctor/edit-doctor.component';
+import { EditPatientComponent } from './features/patient/edit-patient/edit-patient.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { EditAppointmentComponent } from './features/appointment/edit-appointmen
     AddDoctorComponent,
     AddPatientComponent,
     AddAppointmentComponent,
-    EditAppointmentComponent
+    EditAppointmentComponent,
+    EditDoctorComponent,
+    EditPatientComponent
   ],
   imports: [
     BrowserModule,

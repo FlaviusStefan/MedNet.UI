@@ -7,6 +7,8 @@ import { AddDoctorComponent } from './features/doctor/add-doctor/add-doctor.comp
 import { AddPatientComponent } from './features/patient/add-patient/add-patient.component';
 import { AddAppointmentComponent } from './features/appointment/add-appointment/add-appointment.component';
 import { EditAppointmentComponent } from './features/appointment/edit-appointment/edit-appointment.component';
+import { EditDoctorComponent } from './features/doctor/edit-doctor/edit-doctor.component';
+import { EditPatientComponent } from './features/patient/edit-patient/edit-patient.component';
 
 const routes: Routes = [
   {
@@ -18,12 +20,20 @@ const routes: Routes = [
     component: AddDoctorComponent
   },
   {
+    path: 'admin/doctors/:id',
+    component: EditDoctorComponent
+  },
+  {
     path: 'admin/patients',
     component: PatientListComponent
   },
   {
     path: 'admin/patients/add',
     component: AddPatientComponent
+  },
+  {
+    path: 'admin/patients/:id',
+    component: EditPatientComponent
   },
   {
     path: 'admin/appointments',
@@ -36,7 +46,8 @@ const routes: Routes = [
   {
     path: 'admin/appointments/:id',
     component: EditAppointmentComponent
-  }
+  },
+  
 
 ];
 

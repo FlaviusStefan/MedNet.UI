@@ -13,11 +13,11 @@
             </div>
             <div class="mt-3">
                 <label class="form-label">Date & Time</label>
-                <input type="datetime-local" id="appointmentDateTime" class="form-control" name="appointmentDateTime" [(ngModel)]="model.appointmentDateTime">
+                <input type="datetime-local" id="appointmentDateTime" class="form-control" name="appointmentDateTime" [(ngModel)]="model.appointmentDateTime" style="width: 210px;">
             </div>
             <div class="mt-3">
                 <label class="form-label">Status</label>
-                <select class="form-select" id="status" name="status" [(ngModel)]="model.status">
+                <select class="form-select" id="status" name="status" [(ngModel)]="model.status" style="width: 140px;">
                     <option value="Scheduled">Scheduled</option>
                     <option value="In Progress">In Progress</option>
                     <option value="Cancelled">Cancelled</option>
@@ -27,7 +27,7 @@
             </div> 
             <div class="mt-3">
                 <label class="form-label">Reason</label>
-                <select class="form-select" id="reason" name="reason" [(ngModel)]="model.reason">
+                <select class="form-select" id="reason" name="reason" [(ngModel)]="model.reason" style="width: 140px;">
                     <option value="Consultation">Consultation</option>
                     <option value="FollowUp">FollowUp</option>
                     <option value="Surgery">Surgery</option>

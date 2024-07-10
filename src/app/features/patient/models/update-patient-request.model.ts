@@ -1,5 +1,4 @@
-export interface Patient {
-    id: string;
+export interface UpdatePatientRequest{
     firstName: string;
     lastName: string;
     dateOfBirth: string;

@@ -1,0 +1,66 @@
+<div class="container">
+
+    <h1 class="mt-3">Edit Patient</h1>
+
+    <ng-container *ngIf="patient;else notFound">
+    <form #form="ngForm" (ngSubmit)="onFormSubmit()">
+        <div class="mt-2">
+            <div class="mt-3">
+                <label for="patientId">Patient Id</label>
+                <input type="text" disabled
+                id="patientId"
+                class="form-control"
+                name="patientId"
+                value="{{patient.id}}">
+            </div>
+
+            <div class="mt-3">
+                <label for="patientFirstName">First Name</label>
+                <input type="text" 
+                id="patientFirstName"
+                class="form-control"
+                name="patientFirstName"
+                value="{{patient.firstName}}">
+            </div>
+
+            <div class="mt-3">
+                <label for="patientLastName">Last Name</label>
+                <input type="text" 
+                id="patientLastName"
+                class="form-control"
+                name="patientLastName"
+                value="{{patient.lastName}}">
+            </div>
+
+            <div class="mt-3">
+                <label for="patientDateOfBirth">Date of Birth</label>
+                <input type="datetime-local" 
+                id="patientDateOfBirth"
+                class="form-control"
+                name="patientDateOfBirth"
+                [(ngModel)]="patient.dateOfBirth">
+            </div>
+            <div class="mt-3">
+                <label class="form-label">Gender</label>
+                <select class="form-select" id="gender" name="gender" [(ngModel)]="patient.gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                 </select>
+            </div>
+            
+            <div class="mt-3">
+                <button type="submit" class="btn btn-primary">Submit Changes</button>
+            </div>
+        </div>
+    </form>
+
+    </ng-container>
+
+
+    <ng-template #notFound>
+        <div class="alert alert-danger" role="alert">
+            Doctor not found!
+        </div>
+    </ng-template>
+
+</div>

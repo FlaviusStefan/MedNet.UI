@@ -1,0 +1,7 @@
+.table-custom {
+     /* Adjust the font size as needed */
+}
+.table-custom th {
+    text-align: center; /* Center the text */
+    vertical-align: middle; /* Center the text vertically */
+}

@@ -16,7 +16,7 @@
                     <th>Last Name</th>
                     <th>Date of birth</th>
                     <th>Gender</th>
-
+                    <th>Edit</th>
                 </tr>
             </thead>
             <tbody>
@@ -26,6 +26,11 @@
                     <td>{{patient.lastName}}</td>
                     <td>{{patient.dateOfBirth}}</td>
                     <td>{{patient.gender}}</td>
+                    <td>
+                        <a [routerLink]="['/admin/patients', patient.id]" class="btn btn-light">
+                            Edit
+                        </a>
+                    </td>
                 </tr>
             </tbody>
         </table>

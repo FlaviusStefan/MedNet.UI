@@ -3,6 +3,6 @@ export interface Doctor {
     firstName: string;
     lastName: string;
     specialization: string;
-    dateOfBirth: Date;
+    dateOfBirth: string;
     gender: string;
 }
