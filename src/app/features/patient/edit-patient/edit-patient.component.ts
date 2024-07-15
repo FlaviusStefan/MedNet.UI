@@ -61,6 +61,17 @@ export class EditPatientComponent {
     }
   }
 
+  onDelete(): void{
+    if(this.id) {
+      this.patientService.deletePatient(this.id)
+      .subscribe({
+        next: (response) => {
+          this.router.navigateByUrl('/admin/patients');
+        }
+      })
+    }
+  }
+
   ngOnDestroy(): void {
     this.paramsSubscription?.unsubscribe();
     this.editPatientSubscription?.unsubscribe();

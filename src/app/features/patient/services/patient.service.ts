@@ -28,4 +28,8 @@ export class PatientService {
   updatePatient(id: string, updatePatientRequest: UpdatePatientRequest): Observable<Patient> {
     return this.http.put<Patient>(`${environment.apiBaseUrl}/api/patients/${id}`, updatePatientRequest);
   }
+
+  deletePatient(id: string): Observable<Patient> {
+    return this.http.delete<Patient>(`${environment.apiBaseUrl}/api/patients/${id}`);
+  }
 }
