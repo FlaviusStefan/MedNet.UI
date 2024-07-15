@@ -28,4 +28,8 @@ export class DoctorService {
   updateDoctor(id: string, updateDoctorRequest: UpdateDoctorRequest): Observable<Doctor> {
     return this.http.put<Doctor>(`${environment.apiBaseUrl}/api/doctors/${id}`, updateDoctorRequest);
   }
+
+  deleteDoctor(id:string): Observable<Doctor> {
+    return this.http.delete<Doctor>(`${environment.apiBaseUrl}/api/doctors/${id}`);
+  }
 }

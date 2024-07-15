@@ -20,7 +20,7 @@
                 id="doctorFirstName"
                 class="form-control"
                 name="doctorFirstName"
-                value="{{doctor.firstName}}">
+                [(ngModel)]="doctor.firstName">
             </div>
 
             <div class="mt-3">
@@ -29,7 +29,7 @@
                 id="doctorLastName"
                 class="form-control"
                 name="doctorLastName"
-                value="{{doctor.lastName}}">
+                [(ngModel)]="doctor.lastName">
             </div>
 
             <div class="mt-3">
@@ -47,6 +47,26 @@
                     <option value="Female">Female</option>
                  </select>
             </div>
+            <div class="mt-3">
+                <label class="form-label">Specialization</label>
+                <select class="form-select" id="doctorSpecialization" name="doctorSpecialization" [(ngModel)]="doctor.specialization">
+                    <option value="Cardiology">Cardiology</option>
+                    <option value="Dermatology">Dermatology</option>
+                    <option value="Endocrinology">Endocrinology</option>
+                    <option value="Gastroenterology">Gastroenterology</option>
+                    <option value="Hematology">Hematology</option>
+                    <option value="Neurology">Neurology</option>
+                    <option value="Oncology">Oncology</option>
+                    <option value="Ophthalmology">Ophthalmology</option>
+                    <option value="Orthopedics">Orthopedics</option>
+                    <option value="Pediatrics">Pediatrics</option>
+                    <option value="Psychiatry">Psychiatry</option>
+                    <option value="Pulmonology">Pulmonology</option>
+                    <option value="Rheumatology">Rheumatology</option>
+                    <option value="Urology">Urology</option>
+                    <option value="Obstetrics and Gynecology (OB/GYN)">Obstetrics and Gynecology (OB/GYN)</option>
+                </select>
+            </div> 
             
             <div class="mt-3">
                 <button type="submit" class="btn btn-primary">Submit Changes</button>
