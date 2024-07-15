@@ -28,4 +28,8 @@ export class AppointmentService {
   updateAppointment(id: string, updateAppointmentRequest: UpdateAppointmentRequest): Observable<Appointment> {
     return this.http.put<Appointment>(`${environment.apiBaseUrl}/api/appointments/${id}`, updateAppointmentRequest);
   }
+
+  deleteAppointment(id: string): Observable<Appointment> {
+    return this.http.delete<Appointment>(`${environment.apiBaseUrl}/api/appointments/${id}`);
+  }
 }

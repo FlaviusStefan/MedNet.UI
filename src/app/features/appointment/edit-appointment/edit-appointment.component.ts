@@ -63,6 +63,17 @@ export class EditAppointmentComponent implements OnInit, OnDestroy {
     }
   }
 
+  onDelete(): void{
+    if(this.id) {
+      this.appointmentService.deleteAppointment(this.id)
+      .subscribe({
+        next: (response) => {
+          this.router.navigateByUrl('/admin/appointments');
+        }
+      })
+    }
+  }
+
   ngOnDestroy(): void {
     this.paramsSubscription?.unsubscribe();
     this.editAppointmentSubscription?.unsubscribe();
