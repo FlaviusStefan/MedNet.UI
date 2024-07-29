@@ -9,4 +9,5 @@ export interface Appointment {
     appointmentDateTime: string;
     status: string;
     reason: string;
+    details: string;
 }

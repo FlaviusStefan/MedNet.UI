@@ -8,7 +8,7 @@
     </div>
 
     <ng-container *ngIf="patients$ | async as patients">
-        <table class="table table-bordered mt-3">
+        <table class="table table-bordered mt-3 table-custom">
             <thead>
                 <tr>
                     <th>Id</th>
@@ -24,7 +24,7 @@
                     <td>{{patient.id}}</td>
                     <td>{{patient.firstName}}</td>
                     <td>{{patient.lastName}}</td>
-                    <td>{{patient.dateOfBirth}}</td>
+                    <td [innerHTML]="formatDateTime(patient.dateOfBirth)"></td>
                     <td>{{patient.gender}}</td>
                     <td>
                         <a [routerLink]="['/admin/patients', patient.id]" class="btn btn-light">

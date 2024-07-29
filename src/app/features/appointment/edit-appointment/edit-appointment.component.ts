@@ -49,9 +49,9 @@ export class EditAppointmentComponent implements OnInit, OnDestroy {
       patientId: this.appointment?.patientId ?? '',
       appointmentDateTime: this.appointment?.appointmentDateTime ?? '',
       status: this.appointment?.status ?? '',
-      reason: this.appointment?.reason ?? ''
-    };
-
+      reason: this.appointment?.reason ?? '',
+      details: this.appointment?.details ?? ''
+    }
 
     if(this.id){
       this.editAppointmentSubscription = this.appointmentService.updateAppointment(this.id, updateAppointmentRequest)

@@ -22,7 +22,8 @@ export class AddAppointmentComponent implements OnDestroy {
       patientId: '',
       appointmentDateTime: new Date(0),
       status: '',
-      reason: ''
+      reason: '',
+      details: ''
     };
   }
 

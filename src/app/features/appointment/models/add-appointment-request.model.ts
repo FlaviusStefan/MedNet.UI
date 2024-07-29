@@ -4,4 +4,5 @@ export interface AddAppointmentRequest{
     appointmentDateTime: Date;
     status: string;
     reason: string;
+    details: string;
 }

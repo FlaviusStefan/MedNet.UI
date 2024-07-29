@@ -4,4 +4,5 @@ export interface UpdateAppointmentRequest {
     appointmentDateTime: string;
     status: string;
     reason: string;
+    details: string;
 }
