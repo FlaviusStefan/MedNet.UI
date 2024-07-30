@@ -46,7 +46,11 @@ export class EditAppointmentComponent implements OnInit, OnDestroy {
   onFormSubmit(): void {
     const updateAppointmentRequest: UpdateAppointmentRequest = {
       doctorId: this.appointment?.doctorId ?? '',
+      doctorFirstName: this.appointment?.doctorFirstName ?? '',
+      doctorLastName: this.appointment?.doctorLastName ?? '',
       patientId: this.appointment?.patientId ?? '',
+      patientFirstName: this.appointment?.patientFirstName ?? '',
+      patientLastName: this.appointment?.patientLastName ?? '',
       appointmentDateTime: this.appointment?.appointmentDateTime ?? '',
       status: this.appointment?.status ?? '',
       reason: this.appointment?.reason ?? '',

@@ -13,7 +13,7 @@
                     <th>Id</th>
                     <th>Doctor</th>
                     <th>Patient</th>
-                    <th>Date&Time</th>
+                    <th>Date & Time</th>
                     <th>Status</th>
                     <th>Reason</th>
                     <th>Edit</th>
@@ -22,13 +22,8 @@
             <tbody>
                 <tr *ngFor="let appointment of appointments">
                     <td>{{ appointment.id }}</td>
-                    <!-- <td>{{ appointment.doctorFirstName }}</td>
-                    <td>{{ appointment.doctorLastName }}</td>
-                    <td>{{ appointment.patientFirstName }}</td>
-                    <td>{{ appointment.patientLastName }}</td> -->
                     <td>{{ appointment.doctorFirstName + ' ' + appointment.doctorLastName}}</td>
                     <td>{{ appointment.patientFirstName + ' ' + appointment.patientLastName}}</td>
-                    <!-- <td>{{ appointment.appointmentDateTime.replace('T', '') }}</td> -->
                     <td [innerHTML]="formatDateTime(appointment.appointmentDateTime)"></td>
                     <td>{{ appointment.status }}</td>
                     <td>{{ appointment.reason }}</td>
